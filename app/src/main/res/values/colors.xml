@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="anaMavi">#0074D9</color>
+    <color name="yanYesil">#2ECC40</color>
+    <color name="arkaPlan">#375265</color>
+    <color name="naneYesili">#517D2D</color>
+    <color name="kremSarisi">#FAFFD1</color>
+    <color name="turuncuFresh">#FFA500</color>
+    <color name="bej">#F5DEB3</color>
+    <color name="statusBarKremSarisi">#77FAFFD1</color>
+    <color name="statusBarSiyah">#44000000</color>
+</resources>
