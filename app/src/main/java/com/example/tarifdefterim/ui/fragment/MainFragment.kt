@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView.OnQueryTextListener
+import androidx.navigation.Navigation
 import com.example.tarifdefterim.R
+import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
@@ -27,6 +29,11 @@ class MainFragment : Fragment() {
             }
         })
 
+        binding.button3.setOnClickListener {
+            val yemek = Yemekler(1,"musakka",1)
+            val gecis = MainFragmentDirections.tarifDetayGecis(yemek)
+            Navigation.findNavController(it).navigate(gecis)
+        }
 
         return binding.root
 
