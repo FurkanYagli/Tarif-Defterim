@@ -21,7 +21,11 @@
         android:id="@+id/registerFragment"
         android:name="com.example.tarifdefterim.ui.fragment.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/registerMain"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.tarifdefterim.ui.fragment.MainFragment"

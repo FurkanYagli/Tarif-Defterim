@@ -3,10 +3,12 @@ package com.example.tarifdefterim.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.CardTasarimBinding
 import com.example.tarifdefterim.databinding.FragmentMainBinding
+import com.example.tarifdefterim.ui.fragment.MainFragmentDirections
 
 class YemeklerAdapter(var mContext:Context, var yemeklerListesi:List<Yemekler>)
     : RecyclerView.Adapter<YemeklerAdapter.CardTasarimTutucu>() {
@@ -20,13 +22,19 @@ class YemeklerAdapter(var mContext:Context, var yemeklerListesi:List<Yemekler>)
 
     }
 
-    override fun getItemCount(): Int {
+    override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
+        val yemek = yemeklerListesi.get(position)
+        val t = holder.tasarim
 
+        t.textView.text = yemek.yemek_ad
 
+        t.cardViewSatir.setOnClickListener {
+            val gecis = MainFragmentDirections.tarifDetayGecis(yemek)
+            Navigation.findNavController(it).navigate(gecis)
+        }
     }
 
-    override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
+    override fun getItemCount(): Int {
         return yemeklerListesi.size
     }
-
 }

@@ -19,6 +19,10 @@ class TarifDetayFragment : Fragment() {
         val bundle: TarifDetayFragmentArgs by navArgs()
         val gelenTarif = bundle.tarif
 
+        binding.textAd.text = gelenTarif.yemek_ad.toString()
+        binding.textTarif.text = gelenTarif.yemek_tarif.toString()
+        binding.textTarif.text = gelenTarif.yemek_malzemeler.toString()
+
         return inflater.inflate(R.layout.fragment_tarif_detay, container, false)
     }
 
