@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import android.widget.SearchView.OnQueryTextListener
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.tarifdefterim.R
+import com.example.tarifdefterim.data.entity.Kategoriler
 import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.FragmentMainBinding
+import com.example.tarifdefterim.ui.adapter.KategoriAdapter
 import com.example.tarifdefterim.ui.adapter.YemeklerAdapter
 
 class MainFragment : Fragment() {
@@ -30,7 +33,8 @@ class MainFragment : Fragment() {
                 return true
             }
         })
-        binding.rv.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvListe.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        binding.rvKategori.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
         val yemekListesi = ArrayList<Yemekler>()
         val y1 = Yemekler(2,"adana kebabı",1,"et, biber"," null")
         val y2 = Yemekler(3,"Kek",3,"Un,Yumurta,Süt","null")
@@ -40,9 +44,22 @@ class MainFragment : Fragment() {
         yemekListesi.add(y1)
         yemekListesi.add(y2)
         yemekListesi.add(y3)
+
         val yemeklerAdapter = YemeklerAdapter(requireContext(),yemekListesi)
 
-        binding.rv.adapter = yemeklerAdapter
+
+        val kategoriListesi = ArrayList<Kategoriler>()
+        val k1 = Kategoriler(1,"Ana Yemek","karni_yarik_icon")
+        val k2 = Kategoriler(2,"Çorba","soup_icon")
+        val k3 = Kategoriler(3,"Tatlı","tatli_icon")
+        kategoriListesi.add(k1)
+        kategoriListesi.add(k2)
+        kategoriListesi.add(k3)
+
+        val kategoriAdapter = KategoriAdapter(requireContext(),kategoriListesi)
+
+        binding.rvListe.adapter = yemeklerAdapter
+        binding.rvKategori.adapter = kategoriAdapter
 
         return binding.root
 
