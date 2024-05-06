@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView.OnQueryTextListener
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -15,9 +16,13 @@ import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.FragmentMainBinding
 import com.example.tarifdefterim.ui.adapter.KategoriAdapter
 import com.example.tarifdefterim.ui.adapter.YemeklerAdapter
+import com.example.tarifdefterim.ui.viewmodel.AnasayfaViewModel
+import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
+import com.example.tarifdefterim.ui.viewmodel.TarifDetayViewModel
 
 class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
+    private lateinit var viewModel: AnasayfaViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -35,17 +40,14 @@ class MainFragment : Fragment() {
         })
         binding.rvListe.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         binding.rvKategori.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
-        val yemekListesi = ArrayList<Yemekler>()
-        val y1 = Yemekler(2,"adana kebabı",1,"et, biber"," null")
-        val y2 = Yemekler(3,"Kek",3,"Un,Yumurta,Süt","null")
-        val y3 = Yemekler(4,"alinazik",1,
-            "patlıcan,et,yoğurt,Sarımsak,pul biber,yağ",
-            "patlıcanları közle, eti sotele , patlıcanları sarımsaklı yoğurtla harmanla ,eti karışımın üstüne koy" )
-        yemekListesi.add(y1)
-        yemekListesi.add(y2)
-        yemekListesi.add(y3)
 
-        val yemeklerAdapter = YemeklerAdapter(requireContext(),yemekListesi)
+
+        viewModel.yemeklerlistesi.observe(viewLifecycleOwner){
+            val yemeklerAdapter = YemeklerAdapter(requireContext(),it)
+            binding.rvListe.adapter = yemeklerAdapter
+
+
+        }
 
 
         val kategoriListesi = ArrayList<Kategoriler>()
@@ -58,10 +60,18 @@ class MainFragment : Fragment() {
 
         val kategoriAdapter = KategoriAdapter(requireContext(),kategoriListesi)
 
-        binding.rvListe.adapter = yemeklerAdapter
         binding.rvKategori.adapter = kategoriAdapter
 
+
+
+
         return binding.root
+
+    }
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        val tempViewModel: AnasayfaViewModel by viewModels()
+        viewModel = tempViewModel
 
     }
 

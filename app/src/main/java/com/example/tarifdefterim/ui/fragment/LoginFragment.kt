@@ -5,20 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.tarifdefterim.R
 import com.example.tarifdefterim.databinding.FragmentLoginBinding
+import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
+import com.example.tarifdefterim.ui.viewmodel.TarifDetayViewModel
 
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
+    private lateinit var viewModel: GirisViewModel
 
      override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-         binding = FragmentLoginBinding.inflate(inflater, container, false)
-         binding.button.setOnClickListener {
-             Navigation.findNavController(it).navigate(R.id.LogindenRegistera)
-         }
+         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+         binding.loginFragment = this
+
+
+
+
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        val tempViewModel: GirisViewModel by viewModels()
+        viewModel = tempViewModel
+
+    }
+
+    fun buttonGirisYap(){
+        Navigation.findNavController(binding.button).navigate(R.id.LogindenRegistera)
     }
 }
