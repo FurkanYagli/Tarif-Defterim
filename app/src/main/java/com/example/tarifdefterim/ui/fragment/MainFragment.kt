@@ -30,15 +30,17 @@ class MainFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object : OnQueryTextListener {
 
-            override fun onQueryTextChange(newText: String?): Boolean {
+            override fun onQueryTextChange(newText: String): Boolean {
+                viewModel.ara(newText)
                 return true
             }
 
-            override fun onQueryTextSubmit(query: String?): Boolean {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                viewModel.ara(query)
                 return true
             }
         })
-        binding.rvListe.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        binding.rvListe.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         binding.rvKategori.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
 
 

@@ -1,5 +1,6 @@
 package com.example.tarifdefterim.ui.fragment
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

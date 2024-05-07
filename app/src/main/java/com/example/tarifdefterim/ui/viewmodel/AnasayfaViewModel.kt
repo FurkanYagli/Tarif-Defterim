@@ -22,6 +22,9 @@ class AnasayfaViewModel : ViewModel() {
         }
     }
 
-
-
+    fun ara(aramaKelimesi: String) {
+        CoroutineScope(Dispatchers.Main).launch {
+            yemeklerlistesi.value = yrepo.ara(aramaKelimesi)
+        }
+    }
 }

@@ -20,5 +20,13 @@ class YemeklerDataSource {
 
             return@withContext yemekListesi
         }
+    suspend fun ara(aramaKelimesi: String):List<Yemekler> =
+            withContext(Dispatchers.IO){
+                val yemekListesi = ArrayList<Yemekler>()
+                val y1 = Yemekler(2,"adana kebabı",1,"et, biber"," null")
+                yemekListesi.add(y1)
+
+                return@withContext yemekListesi
+    }
 
 }

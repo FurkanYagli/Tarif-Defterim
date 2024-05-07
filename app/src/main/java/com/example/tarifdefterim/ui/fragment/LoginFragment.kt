@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.tarifdefterim.R
 import com.example.tarifdefterim.databinding.FragmentLoginBinding
 import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
-import com.example.tarifdefterim.ui.viewmodel.TarifDetayViewModel
 
 class LoginFragment : Fragment() {
 
@@ -39,5 +37,6 @@ class LoginFragment : Fragment() {
 
     fun buttonGirisYap(){
         Navigation.findNavController(binding.button).navigate(R.id.LogindenRegistera)
+
     }
 }

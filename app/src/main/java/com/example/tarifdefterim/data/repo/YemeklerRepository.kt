@@ -10,4 +10,6 @@ class YemeklerRepository {
     var yds = YemeklerDataSource()
 
     suspend fun yemekleriYukle():List<Yemekler> = yds.yemekleriYukle()
+
+    suspend fun ara(aramaKelimesi: String):List<Yemekler> = yds.ara(aramaKelimesi)
 }

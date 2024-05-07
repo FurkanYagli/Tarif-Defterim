@@ -1,11 +1,16 @@
 package com.example.tarifdefterim.data.datasource
 
+import android.net.Uri
 import androidx.navigation.Navigation
 import com.example.tarifdefterim.R
+import com.example.tarifdefterim.databinding.FragmentLoginBinding
 
 class KullanicilarDataSource {
-
-    suspend fun girisYap(ad:String,sifre:String){
-        Navigation.findNavController(binding.button).navigate(R.id.LogindenRegistera)
+    suspend fun girisYap(){
     }
+
+    suspend fun kayitOl(){
+    }
+
+
 }
