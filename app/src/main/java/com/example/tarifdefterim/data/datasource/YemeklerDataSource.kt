@@ -1,5 +1,6 @@
 package com.example.tarifdefterim.data.datasource
 
+import com.example.tarifdefterim.data.entity.Kategoriler
 import com.example.tarifdefterim.data.entity.Yemekler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -19,6 +20,18 @@ class YemeklerDataSource {
             yemekListesi.add(y3)
 
             return@withContext yemekListesi
+        }
+    suspend fun kategorileriYukle():List<Kategoriler> =
+        withContext(Dispatchers.IO){
+            val kategoriListesi = ArrayList<Kategoriler>()
+            val k1 = Kategoriler(1,"Ana Yemek","karni_yarik_icon")
+            val k2 = Kategoriler(2,"Çorba","soup_icon")
+            val k3 = Kategoriler(3,"Tatlı","tatli_icon")
+            kategoriListesi.add(k1)
+            kategoriListesi.add(k2)
+            kategoriListesi.add(k3)
+
+            return@withContext kategoriListesi
         }
     suspend fun ara(aramaKelimesi: String):List<Yemekler> =
             withContext(Dispatchers.IO){

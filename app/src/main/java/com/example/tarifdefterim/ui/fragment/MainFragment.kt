@@ -28,6 +28,16 @@ class MainFragment : Fragment() {
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
+        viewModel.yemeklerlistesi.observe(viewLifecycleOwner){
+            val yemeklerAdapter = YemeklerAdapter(requireContext(),it)
+            binding.yemeklerAdapter = yemeklerAdapter
+        }
+
+        viewModel.kategorilerlistesi.observe(viewLifecycleOwner){
+            val kategoriAdapter = KategoriAdapter(requireContext(),it)
+            binding.kategoriAdapter = kategoriAdapter
+        }
+
         binding.searchView.setOnQueryTextListener(object : OnQueryTextListener {
 
             override fun onQueryTextChange(newText: String): Boolean {
@@ -40,32 +50,6 @@ class MainFragment : Fragment() {
                 return true
             }
         })
-        binding.rvListe.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-        binding.rvKategori.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
-
-
-        viewModel.yemeklerlistesi.observe(viewLifecycleOwner){
-            val yemeklerAdapter = YemeklerAdapter(requireContext(),it)
-            binding.rvListe.adapter = yemeklerAdapter
-
-
-        }
-
-
-        val kategoriListesi = ArrayList<Kategoriler>()
-        val k1 = Kategoriler(1,"Ana Yemek","karni_yarik_icon")
-        val k2 = Kategoriler(2,"Çorba","soup_icon")
-        val k3 = Kategoriler(3,"Tatlı","tatli_icon")
-        kategoriListesi.add(k1)
-        kategoriListesi.add(k2)
-        kategoriListesi.add(k3)
-
-        val kategoriAdapter = KategoriAdapter(requireContext(),kategoriListesi)
-
-        binding.rvKategori.adapter = kategoriAdapter
-
-
-
 
         return binding.root
 
@@ -75,6 +59,12 @@ class MainFragment : Fragment() {
         val tempViewModel: AnasayfaViewModel by viewModels()
         viewModel = tempViewModel
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.yemekleriYukle()
+        viewModel.kategorileriYukle()
     }
 
 }
