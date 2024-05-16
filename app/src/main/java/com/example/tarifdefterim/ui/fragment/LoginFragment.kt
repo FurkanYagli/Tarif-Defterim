@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import com.example.tarifdefterim.R
 import com.example.tarifdefterim.databinding.FragmentLoginBinding
 import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
+import com.example.tarifdefterim.util.gecisYap
 
 class LoginFragment : Fragment() {
 
@@ -36,7 +37,7 @@ class LoginFragment : Fragment() {
     }
 
     fun buttonGirisYap(){
-        Navigation.findNavController(binding.button).navigate(R.id.LogindenRegistera)
+        Navigation.gecisYap(binding.button,R.id.LogindenRegistera)
 
     }
 }

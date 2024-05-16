@@ -9,6 +9,7 @@ import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.CardTasarimBinding
 import com.example.tarifdefterim.databinding.FragmentMainBinding
 import com.example.tarifdefterim.ui.fragment.MainFragmentDirections
+import com.example.tarifdefterim.util.gecisYap
 
 class YemeklerAdapter(var mContext:Context, var yemeklerListesi:List<Yemekler>)
     : RecyclerView.Adapter<YemeklerAdapter.CardTasarimTutucu>() {
@@ -30,7 +31,8 @@ class YemeklerAdapter(var mContext:Context, var yemeklerListesi:List<Yemekler>)
 
         t.cardViewSatir.setOnClickListener {
             val gecis = MainFragmentDirections.tarifDetayGecis(yemek)
-            Navigation.findNavController(it).navigate(gecis)
+            //Navigation.findNavController(it).navigate(gecis)
+            Navigation.gecisYap(it,gecis)
         }
     }
 

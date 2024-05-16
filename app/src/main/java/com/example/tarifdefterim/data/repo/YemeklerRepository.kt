@@ -6,9 +6,8 @@ import com.example.tarifdefterim.data.entity.Yemekler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class YemeklerRepository {
+class YemeklerRepository(var yds:YemeklerDataSource) {
 
-    var yds = YemeklerDataSource()
 
     suspend fun yemekleriYukle():List<Yemekler> = yds.yemekleriYukle()
 

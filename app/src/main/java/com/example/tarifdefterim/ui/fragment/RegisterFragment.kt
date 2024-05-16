@@ -14,6 +14,7 @@ import com.example.tarifdefterim.databinding.FragmentRegisterBinding
 import com.example.tarifdefterim.ui.viewmodel.AnasayfaViewModel
 import com.example.tarifdefterim.ui.viewmodel.KayitViewModel
 import com.example.tarifdefterim.ui.viewmodel.TarifDetayViewModel
+import com.example.tarifdefterim.util.gecisYap
 
 class RegisterFragment : Fragment() {
 private lateinit var binding: FragmentRegisterBinding
@@ -39,6 +40,6 @@ private lateinit var viewModel: KayitViewModel
 
     }
     fun buttonKayitOl(){
-        Navigation.findNavController(binding.button2).navigate(R.id.registerMain)
+        Navigation.gecisYap(binding.button2,R.id.registerMain)
     }
 }

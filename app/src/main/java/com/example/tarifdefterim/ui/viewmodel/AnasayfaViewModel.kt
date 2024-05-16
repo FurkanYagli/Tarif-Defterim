@@ -5,12 +5,14 @@ import androidx.lifecycle.ViewModel
 import com.example.tarifdefterim.data.entity.Kategoriler
 import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.data.repo.YemeklerRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AnasayfaViewModel : ViewModel() {
-    var yrepo = YemeklerRepository()
+@HiltViewModel
+class AnasayfaViewModel @Inject constructor(var yrepo:YemeklerRepository) : ViewModel() {
     var yemeklerlistesi = MutableLiveData<List<Yemekler>>()
     var kategorilerlistesi = MutableLiveData<List<Kategoriler>>()
 
