@@ -15,7 +15,9 @@ import com.example.tarifdefterim.ui.viewmodel.AnasayfaViewModel
 import com.example.tarifdefterim.ui.viewmodel.KayitViewModel
 import com.example.tarifdefterim.ui.viewmodel.TarifDetayViewModel
 import com.example.tarifdefterim.util.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 private lateinit var binding: FragmentRegisterBinding
 private lateinit var viewModel: KayitViewModel

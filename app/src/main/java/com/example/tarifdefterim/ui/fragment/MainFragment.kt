@@ -19,7 +19,9 @@ import com.example.tarifdefterim.ui.adapter.YemeklerAdapter
 import com.example.tarifdefterim.ui.viewmodel.AnasayfaViewModel
 import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
 import com.example.tarifdefterim.ui.viewmodel.TarifDetayViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private lateinit var viewModel: AnasayfaViewModel

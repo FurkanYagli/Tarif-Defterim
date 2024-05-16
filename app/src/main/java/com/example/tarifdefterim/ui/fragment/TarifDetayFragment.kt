@@ -11,7 +11,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.tarifdefterim.R
 import com.example.tarifdefterim.databinding.FragmentTarifDetayBinding
 import com.example.tarifdefterim.ui.viewmodel.TarifDetayViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TarifDetayFragment : Fragment() {
 
     private lateinit var binding: FragmentTarifDetayBinding

@@ -12,7 +12,9 @@ import com.example.tarifdefterim.R
 import com.example.tarifdefterim.databinding.FragmentLoginBinding
 import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
 import com.example.tarifdefterim.util.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
