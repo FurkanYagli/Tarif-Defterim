@@ -13,9 +13,9 @@ import javax.inject.Inject
 class GirisViewModel @Inject constructor(var krepo: KullanicilarRepository) : ViewModel() {
 
 
-    fun girisYap(){
+    fun girisYap(mail: String, sifre: String){
         CoroutineScope(Dispatchers.Main).launch {
-            krepo.girisYap()
+            krepo.girisYap(mail, sifre)
         }
     }
 

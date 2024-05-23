@@ -38,8 +38,13 @@ class LoginFragment : Fragment() {
 
     }
 
-    fun buttonGirisYap(){
-        Navigation.gecisYap(binding.button,R.id.LogindenRegistera)
+    fun buttonGirisYap(mail:String,sifre:String){
+        viewModel.girisYap(mail, sifre)
+        Navigation.gecisYap(binding.buttonGiris,R.id.loginMaine)
+
+    }
+    fun buttonKayitOl(){
+        Navigation.gecisYap(binding.buttonGiris,R.id.LogindenRegistera)
 
     }
 }

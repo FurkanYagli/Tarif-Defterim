@@ -6,7 +6,7 @@ import com.example.tarifdefterim.R
 import com.example.tarifdefterim.databinding.FragmentLoginBinding
 
 class KullanicilarDataSource {
-    suspend fun girisYap(){
+    suspend fun girisYap(mail: String, sifre: String){
     }
 
     suspend fun kayitOl(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String){

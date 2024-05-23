@@ -56,7 +56,7 @@ private lateinit var viewModel: KayitViewModel
     }
     fun buttonKontrol(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String){
         if (sifre.toString() == sifreTekrar.toString()){
-            if (ad != null && soyad != null && mail != null && sifre != null && sifreTekrar != null){
+            if (ad != "" && soyad != "" && mail != "" && sifre != "" && sifreTekrar != ""){
                 if (binding.checkBox.isChecked == true) {
                     buttonKayitOl(ad, soyad, mail, sifre, sifreTekrar)
 
