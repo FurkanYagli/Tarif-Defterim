@@ -29,7 +29,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout4"
+                    android:id="@+id/textInputLayoutSifre"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -43,16 +43,17 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMail">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textSifre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Şifre" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout5"
+                    android:id="@+id/textInputLayoutSifreTekrar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -66,9 +67,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutSifre">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textSifreTekrar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Şifre Tekrar" />
@@ -79,10 +81,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="156dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="32dp"
                     android:backgroundTint="@color/turuncuFresh"
-                    android:onClick="@{() -> registerFragment.buttonKayitOl()}"
                     android:shadowColor="@color/black"
                     android:text="KAYIT OL"
                     android:textColor="@color/white"
@@ -92,7 +93,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout6"
+                    android:id="@+id/textInputLayoutMail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -106,9 +107,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutSoyad">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textMail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="E-posta" />
@@ -127,10 +129,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutSifreTekrar" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout3"
+                    android:id="@+id/textInputLayoutAd"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -148,9 +150,37 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textAd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Ad Soyad" />
+                        android:hint="Ad" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutSoyad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="25dp"
+                    app:boxCornerRadiusBottomStart="25dp"
+                    app:boxCornerRadiusTopEnd="25dp"
+                    app:boxCornerRadiusTopStart="25dp"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAd">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textSoyad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Soyad" />
+
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageView

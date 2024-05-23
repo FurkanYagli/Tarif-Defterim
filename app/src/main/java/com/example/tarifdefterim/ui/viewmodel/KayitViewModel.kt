@@ -13,9 +13,9 @@ import javax.inject.Inject
 class KayitViewModel @Inject constructor(var krepo: KullanicilarRepository) : ViewModel() {
 
 
-    fun kayitOl(){
+    fun kayitOl(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String){
         CoroutineScope(Dispatchers.Main).launch {
-            krepo.kayitOl()
+            krepo.kayitOl(ad, soyad, mail, sifre, sifreTekrar)
         }
     }
 }

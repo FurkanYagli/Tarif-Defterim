@@ -9,7 +9,7 @@ class KullanicilarDataSource {
     suspend fun girisYap(){
     }
 
-    suspend fun kayitOl(){
+    suspend fun kayitOl(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String){
     }
 
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "684373431605",
+    "project_id": "yemektarif-c5f5d",
+    "storage_bucket": "yemektarif-c5f5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684373431605:android:7788aef62f3c2b6bd2687c",
+        "android_client_info": {
+          "package_name": "com.example.tarifdefterim"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3rv37EAdRdt0P2FEWAywuG_6b2J1nJ54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

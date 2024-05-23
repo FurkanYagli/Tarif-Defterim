@@ -8,7 +8,7 @@ import com.example.tarifdefterim.databinding.FragmentLoginBinding
 class KullanicilarRepository(var kds: KullanicilarDataSource)  {
 
     suspend fun girisYap() = kds.girisYap()
-    suspend fun kayitOl() = kds.kayitOl()
+    suspend fun kayitOl(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String) = kds.kayitOl(ad, soyad, mail, sifre, sifreTekrar)
 
 
 }
