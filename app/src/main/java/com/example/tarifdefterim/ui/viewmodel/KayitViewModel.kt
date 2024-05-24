@@ -14,8 +14,6 @@ class KayitViewModel @Inject constructor(var krepo: KullanicilarRepository) : Vi
 
 
     fun kayitOl(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String){
-        CoroutineScope(Dispatchers.Main).launch {
-            krepo.kayitOl(ad, soyad, mail, sifre, sifreTekrar)
-        }
+        krepo.kayitOl(ad, soyad, mail, sifre, sifreTekrar)
     }
 }

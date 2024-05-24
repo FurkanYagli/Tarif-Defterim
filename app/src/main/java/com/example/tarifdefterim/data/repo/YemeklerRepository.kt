@@ -9,9 +9,9 @@ import kotlinx.coroutines.withContext
 class YemeklerRepository(var yds:YemeklerDataSource) {
 
 
-    suspend fun yemekleriYukle():List<Yemekler> = yds.yemekleriYukle()
+    fun yemekleriYukle():List<Yemekler> = yds.yemekleriYukle()
 
-    suspend fun kategorileriYukle():List<Kategoriler> = yds.kategorileriYukle()
+    fun kategorileriYukle():List<Kategoriler> = yds.kategorileriYukle()
 
-    suspend fun ara(aramaKelimesi: String):List<Yemekler> = yds.ara(aramaKelimesi)
+    fun ara(aramaKelimesi: String):List<Yemekler> = yds.ara(aramaKelimesi)
 }

@@ -66,7 +66,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.6.1")
 
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
-    implementation(platform("com.google.firebase:firebase-firestore:25.0.0"))
-
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-firestore:25.0.0")
 
 }

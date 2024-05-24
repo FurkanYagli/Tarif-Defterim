@@ -14,9 +14,7 @@ class GirisViewModel @Inject constructor(var krepo: KullanicilarRepository) : Vi
 
 
     fun girisYap(mail: String, sifre: String){
-        CoroutineScope(Dispatchers.Main).launch {
-            krepo.girisYap(mail, sifre)
-        }
+        krepo.girisYap(mail, sifre)
     }
 
 }

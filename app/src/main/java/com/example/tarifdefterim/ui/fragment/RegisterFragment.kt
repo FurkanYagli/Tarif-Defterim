@@ -71,7 +71,7 @@ private lateinit var viewModel: KayitViewModel
             Toast.makeText(requireContext(), "Şifreler Aynı Olmalı", Toast.LENGTH_LONG).show()
         }
         
-        viewModel.kayitOl(ad, soyad, mail, sifre, sifreTekrar)
+       // viewModel.kayitOl(ad, soyad, mail, sifre, sifreTekrar)
       //  Navigation.gecisYap(binding.button2,R.id.registerMain)
     }
 }

@@ -22,19 +22,13 @@ class AnasayfaViewModel @Inject constructor(var yrepo:YemeklerRepository) : View
     }
 
     fun yemekleriYukle(){
-        CoroutineScope(Dispatchers.Main).launch {
-            yemeklerlistesi.value = yrepo.yemekleriYukle()
-        }
+        yemeklerlistesi.value = yrepo.yemekleriYukle()
     }
     fun kategorileriYukle(){
-        CoroutineScope(Dispatchers.Main).launch {
-            kategorilerlistesi.value = yrepo.kategorileriYukle()
-        }
+        kategorilerlistesi.value = yrepo.kategorileriYukle()
     }
 
     fun ara(aramaKelimesi: String) {
-        CoroutineScope(Dispatchers.Main).launch {
-            yemeklerlistesi.value = yrepo.ara(aramaKelimesi)
-        }
+        yemeklerlistesi.value = yrepo.ara(aramaKelimesi)
     }
 }
