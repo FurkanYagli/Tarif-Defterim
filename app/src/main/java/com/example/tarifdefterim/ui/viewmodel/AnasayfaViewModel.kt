@@ -22,13 +22,14 @@ class AnasayfaViewModel @Inject constructor(var yrepo:YemeklerRepository) : View
     }
 
     fun yemekleriYukle(){
-        yemeklerlistesi.value = yrepo.yemekleriYukle()
+        yemeklerlistesi = yrepo.yemekleriYukle()
     }
     fun kategorileriYukle(){
-        kategorilerlistesi.value = yrepo.kategorileriYukle()
+      // kategorilerlistesi = yrepo.kategorileriYukle()
+        yrepo.kategorileriYukle()
     }
 
     fun ara(aramaKelimesi: String) {
-        yemeklerlistesi.value = yrepo.ara(aramaKelimesi)
+        yemeklerlistesi = yrepo.ara(aramaKelimesi)
     }
 }

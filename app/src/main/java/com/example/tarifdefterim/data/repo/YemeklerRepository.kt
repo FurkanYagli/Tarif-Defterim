@@ -1,17 +1,19 @@
 package com.example.tarifdefterim.data.repo
 
+import androidx.lifecycle.MutableLiveData
+import com.example.tarifdefterim.data.datasource.KategorilerDataSource
 import com.example.tarifdefterim.data.datasource.YemeklerDataSource
 import com.example.tarifdefterim.data.entity.Kategoriler
 import com.example.tarifdefterim.data.entity.Yemekler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class YemeklerRepository(var yds:YemeklerDataSource) {
+class YemeklerRepository(var yds:YemeklerDataSource, var kds:KategorilerDataSource) {
 
 
-    fun yemekleriYukle():List<Yemekler> = yds.yemekleriYukle()
+    fun yemekleriYukle(): MutableLiveData<List<Yemekler>> = yds.yemekleriYukle()
 
-    fun kategorileriYukle():List<Kategoriler> = yds.kategorileriYukle()
+    fun kategorileriYukle()/*:MutableLiveData<List<Kategoriler>>*/ = kds.kategorileriYukle()
 
-    fun ara(aramaKelimesi: String):List<Yemekler> = yds.ara(aramaKelimesi)
+    fun ara(aramaKelimesi: String):MutableLiveData<List<Yemekler>> = yds.ara(aramaKelimesi)
 }

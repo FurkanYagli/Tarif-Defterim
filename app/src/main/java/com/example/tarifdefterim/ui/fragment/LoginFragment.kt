@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -39,9 +40,15 @@ class LoginFragment : Fragment() {
     }
 
     fun buttonGirisYap(mail:String,sifre:String){
+       /*var x = viewModel.girisYap(mail, sifre)
+        if (x == true) {
+            Navigation.gecisYap(binding.buttonGiris, R.id.loginMaine)
+            Toast.makeText(requireContext(), "True", Toast.LENGTH_LONG).show()
+        }else{
+            Toast.makeText(requireContext(), "False", Toast.LENGTH_LONG).show()
+        }*/
         viewModel.girisYap(mail, sifre)
-        Navigation.gecisYap(binding.buttonGiris,R.id.loginMaine)
-
+        Navigation.gecisYap(binding.buttonGiris, R.id.loginMaine)
     }
     fun buttonKayitOl(){
         Navigation.gecisYap(binding.buttonGiris,R.id.LogindenRegistera)
