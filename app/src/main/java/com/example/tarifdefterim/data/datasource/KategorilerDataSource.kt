@@ -9,8 +9,8 @@ class KategorilerDataSource(var collectionKategoriler: CollectionReference) {
     var kategorilerlistesi = MutableLiveData<List<Kategoriler>>()
 
 
-    fun kategorileriYukle()/*: MutableLiveData<List<Kategoriler>>*/ {
-       /* collectionKategoriler.addSnapshotListener { value, error ->
+    fun kategorileriYukle(): MutableLiveData<List<Kategoriler>> {
+        collectionKategoriler.addSnapshotListener { value, error ->
             if(value != null){
                 val liste = ArrayList<Kategoriler>()
 
@@ -23,7 +23,7 @@ class KategorilerDataSource(var collectionKategoriler: CollectionReference) {
                 }
                 kategorilerlistesi.value = liste
             }
-        }*/
-        //return kategorilerlistesi
+        }
+        return kategorilerlistesi
     }
 }

@@ -9,7 +9,7 @@ import com.example.tarifdefterim.databinding.FragmentLoginBinding
 
 class KullanicilarRepository(var kds: KullanicilarDataSource)  {
 
-    fun girisYap(mail: String, sifre: String)/*: MutableLiveData<List<Kullanicilar>>*/ = kds.girisYap(mail, sifre)
+    fun girisYap(mail: String, sifre: String): MutableLiveData<List<Kullanicilar>> = kds.girisYap(mail, sifre)
     fun kayitOl(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String) = kds.kayitOl(ad, soyad, mail, sifre, sifreTekrar)
 
 

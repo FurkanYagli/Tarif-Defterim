@@ -37,6 +37,9 @@
         <action
             android:id="@+id/tarifDetayGecis"
             app:destination="@id/tarifDetayFragment" />
+        <action
+            android:id="@+id/mainKategoriDetaya"
+            app:destination="@id/kategoriDetayFragment" />
     </fragment>
     <fragment
         android:id="@+id/tarifDetayFragment"
@@ -46,5 +49,14 @@
         <argument
             android:name="tarif"
             app:argType="com.example.tarifdefterim.data.entity.Yemekler" />
+    </fragment>
+    <fragment
+        android:id="@+id/kategoriDetayFragment"
+        android:name="com.example.tarifdefterim.ui.fragment.KategoriDetayFragment"
+        android:label="fragment_kategori_detay"
+        tools:layout="@layout/fragment_kategori_detay" >
+        <argument
+            android:name="kategori"
+            app:argType="com.example.tarifdefterim.data.entity.Kategoriler" />
     </fragment>
 </navigation>

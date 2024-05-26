@@ -14,6 +14,7 @@ import com.example.tarifdefterim.databinding.FragmentLoginBinding
 import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
 import com.example.tarifdefterim.util.gecisYap
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.Exception
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -21,11 +22,19 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: GirisViewModel
 
+
      override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
          binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
          binding.loginFragment = this
 
+
+
+         binding.buttonGiris.setOnClickListener {
+             val mail = binding.TextInputMail.text.toString()
+             val sifre = binding.TextInputParola.text.toString()
+             buttonGirisYap(mail, sifre)
+         }
 
 
 
@@ -39,19 +48,30 @@ class LoginFragment : Fragment() {
 
     }
 
-    fun buttonGirisYap(mail:String,sifre:String){
-       /*var x = viewModel.girisYap(mail, sifre)
-        if (x == true) {
-            Navigation.gecisYap(binding.buttonGiris, R.id.loginMaine)
-            Toast.makeText(requireContext(), "True", Toast.LENGTH_LONG).show()
-        }else{
-            Toast.makeText(requireContext(), "False", Toast.LENGTH_LONG).show()
-        }*/
-        viewModel.girisYap(mail, sifre)
-        Navigation.gecisYap(binding.buttonGiris, R.id.loginMaine)
-    }
     fun buttonKayitOl(){
         Navigation.gecisYap(binding.buttonGiris,R.id.LogindenRegistera)
 
     }
+    fun buttonGirisYap(mail:String,sifre:String){
+        try {
+            val a = viewModel.girisYap(mail, sifre)
+            if (viewModel.kullanicilarlistesi.value != null){
+                if (viewModel.kullanicilarlistesi.value!!.size == 1){
+                    Navigation.gecisYap(binding.buttonGiris, R.id.loginMaine)
+                    //Toast.makeText(requireContext(), "True", Toast.LENGTH_LONG).show()
+
+                }
+                else{Toast.makeText(requireContext(), "Hatalı Bilgi Lütfennnn Bilgilerinizi Kontrol Ediniz", Toast.LENGTH_SHORT).show()}
+            }
+            else{Toast.makeText(requireContext(), "Hatalı Bilgi Lütfen Bilgilerinizi Kontrol Ediniz", Toast.LENGTH_LONG).show()}
+
+            //viewModel.kullanicilarlistesi.observe(viewLifecycleOwner){}
+
+
+        }catch (e: Exception){
+            Toast.makeText(requireContext(), "Hatalı Bilgi Lütfen Bilgilerinizi Kontrol Edinizzzz", Toast.LENGTH_LONG).show()
+        }
+
+        }
+
 }

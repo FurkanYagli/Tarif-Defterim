@@ -3,11 +3,14 @@ package com.example.tarifdefterim.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tarifdefterim.data.entity.Kategoriler
 import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.CardTasarimBinding
 import com.example.tarifdefterim.databinding.FiltreTasarimBinding
+import com.example.tarifdefterim.ui.fragment.MainFragmentDirections
+import com.example.tarifdefterim.util.gecisYap
 
 class KategoriAdapter(var mContext: Context, var kategoriler:List<Kategoriler>)
     :RecyclerView.Adapter<KategoriAdapter.FiltreTasarimTutucu>(){
@@ -23,10 +26,16 @@ class KategoriAdapter(var mContext: Context, var kategoriler:List<Kategoriler>)
         val kategori = kategoriler.get(position)
         val t = holder.tasarim
 
+
         t.imageViewKategori.setImageResource(
             mContext.resources.getIdentifier(kategori.kategori_resim, "drawable", mContext.packageName)
         )
         t.txtKategoriAd.text = "${kategori.kategori_ad}"
+
+        t.cardViewKategori.setOnClickListener {
+            val gecis = MainFragmentDirections.mainKategoriDetaya(kategori)
+            Navigation.gecisYap(it,gecis)
+        }
 
     }
 

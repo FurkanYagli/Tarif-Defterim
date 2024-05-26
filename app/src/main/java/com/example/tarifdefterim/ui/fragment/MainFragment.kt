@@ -63,11 +63,11 @@ class MainFragment : Fragment() {
 
     }
 
-    override fun onResume() {
+   /*override fun onResume() {
         super.onResume()
         viewModel.yemekleriYukle()
         viewModel.kategorileriYukle()
-    }
+    }*/
 
 }
 

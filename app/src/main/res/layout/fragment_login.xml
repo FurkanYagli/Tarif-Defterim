@@ -11,10 +11,11 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragment.LoginFragment"
-        android:background="@color/bej">
+        android:background="@color/bej"
+        tools:context=".ui.fragment.LoginFragment">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
@@ -61,7 +62,8 @@
                 android:id="@+id/TextInputParola"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Şifre" />
+                android:hint="Şifre"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -73,7 +75,6 @@
             android:layout_marginEnd="32dp"
             android:backgroundTint="@color/turuncuFresh"
             android:shadowColor="@color/black"
-            android:onClick="@{() -> loginFragment.buttonGirisYap(TextInputMail.getText().toString(), TextInputParola.getText().toString())}"
             android:text="GİRİŞ YAP"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +100,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@android:color/transparent"
-            android:text="Kayıt Ol"
             android:onClick="@{() -> loginFragment.buttonKayitOl() }"
+            android:text="Kayıt Ol"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/black"

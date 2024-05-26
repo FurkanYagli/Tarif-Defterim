@@ -14,18 +14,17 @@ class KullanicilarDataSource(var collectionKullanicilar:CollectionReference) {
     var kullanicilarListesi = MutableLiveData<List<Kullanicilar>>()
 
 
-    fun girisYap(mail: String, sifre: String)/*:MutableLiveData<List<Kullanicilar>>*/{
-       /*collectionKullanicilar.addSnapshotListener { value, error ->
+    fun girisYap(mail: String, sifre: String):MutableLiveData<List<Kullanicilar>>{
+       collectionKullanicilar.addSnapshotListener { value, error ->
             if(value != null){
                 val liste = ArrayList<Kullanicilar>()
 
                 for (d in value.documents){
                     val kullanici = d.toObject(Kullanicilar::class.java)
                     if (kullanici != null){
-                        if (kullanici.kullanici_mail!!.lowercase().contains(mail.lowercase()))
-                            if (kullanici.kullanici_sifre!!.lowercase().contains(sifre.lowercase())){
-                                kullanici.kullanici_id = d.id
-
+                        if (kullanici.kullanici_mail!!.lowercase().contains(mail.lowercase()) /*&& kullanici.kullanici_sifre!!.contains(sifre)*/)
+                            if (kullanici.kullanici_sifre!!.contains(sifre)){
+                                //kullanici.kullanici_id = d.id
                                 liste.add(kullanici)
                             }
                     }
@@ -33,7 +32,7 @@ class KullanicilarDataSource(var collectionKullanicilar:CollectionReference) {
                 kullanicilarListesi.value = liste
             }
         }
-        return kullanicilarListesi*/
+        return kullanicilarListesi
     }
 
     fun kayitOl(ad:String, soyad:String, mail:String, sifre:String, sifreTekrar:String){
