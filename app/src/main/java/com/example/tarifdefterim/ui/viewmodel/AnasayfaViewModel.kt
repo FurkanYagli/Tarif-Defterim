@@ -25,7 +25,7 @@ class AnasayfaViewModel @Inject constructor(var yrepo:YemeklerRepository) : View
         yemeklerlistesi = yrepo.yemekleriYukle()
     }
     fun kategorileriYukle(){
-       kategorilerlistesi = yrepo.kategorileriYukle()
+     //  kategorilerlistesi = yrepo.kategorileriYukle()
       //  yrepo.kategorileriYukle()
     }
 

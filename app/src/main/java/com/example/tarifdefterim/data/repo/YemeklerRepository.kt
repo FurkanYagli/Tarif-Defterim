@@ -13,7 +13,7 @@ class YemeklerRepository(var yds:YemeklerDataSource, var kds:KategorilerDataSour
 
     fun yemekleriYukle(): MutableLiveData<List<Yemekler>> = yds.yemekleriYukle()
 
-    fun kategorileriYukle():MutableLiveData<List<Kategoriler>> = kds.kategorileriYukle()
+    fun kategorileriYukle()/*:MutableLiveData<List<Kategoriler>> */= kds.kategorileriYukle()
 
     fun ara(aramaKelimesi: String):MutableLiveData<List<Yemekler>> = yds.ara(aramaKelimesi)
 
