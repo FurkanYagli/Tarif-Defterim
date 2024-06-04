@@ -46,7 +46,6 @@ class AppModule {
     @Provides
     @Singleton
     fun provideCollectionReference() : CollectionReference {
-        return Firebase.firestore.collection("Kullancilar")
-        return Firebase.firestore.collection("Yemekler")
+        return Firebase.firestore.collection("yemekler")
     }
 }

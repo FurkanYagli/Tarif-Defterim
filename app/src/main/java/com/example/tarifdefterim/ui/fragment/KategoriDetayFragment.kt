@@ -12,7 +12,7 @@ import com.example.tarifdefterim.R
 import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.FragmentKategoriDetayBinding
 import com.example.tarifdefterim.databinding.FragmentMainBinding
-import com.example.tarifdefterim.ui.adapter.KategoriDetayAdapter
+//import com.example.tarifdefterim.ui.adapter.KategoriDetayAdapter
 import com.example.tarifdefterim.ui.adapter.YemeklerAdapter
 import com.example.tarifdefterim.ui.viewmodel.AnasayfaViewModel
 import com.example.tarifdefterim.ui.viewmodel.GirisViewModel

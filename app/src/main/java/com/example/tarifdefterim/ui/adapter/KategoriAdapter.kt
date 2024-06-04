@@ -33,8 +33,8 @@ class KategoriAdapter(var mContext: Context, var kategoriler:List<Kategoriler>)
         t.txtKategoriAd.text = "${kategori.kategori_ad}"
 
         t.cardViewKategori.setOnClickListener {
-            val gecis = MainFragmentDirections.mainKategoriDetaya(kategori)
-            Navigation.gecisYap(it,gecis)
+           // val gecis = MainFragmentDirections.mainKategoriDetaya(kategori)
+            //Navigation.gecisYap(it,gecis)
         }
 
     }

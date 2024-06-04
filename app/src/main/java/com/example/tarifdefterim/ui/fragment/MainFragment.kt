@@ -31,14 +31,14 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
         viewModel.yemeklerlistesi.observe(viewLifecycleOwner){
-            val yemeklerAdapter = YemeklerAdapter(requireContext(),it)
+            val yemeklerAdapter = YemeklerAdapter(requireContext(),viewModel.yemeklerlistesi,viewModel)
             binding.yemeklerAdapter = yemeklerAdapter
         }
 
-        viewModel.kategorilerlistesi.observe(viewLifecycleOwner){
+        /*viewModel.kategorilerlistesi.observe(viewLifecycleOwner){
             val kategoriAdapter = KategoriAdapter(requireContext(),it)
             binding.kategoriAdapter = kategoriAdapter
-        }
+        }*/
 
         binding.searchView.setOnQueryTextListener(object : OnQueryTextListener {
 
@@ -66,7 +66,7 @@ class MainFragment : Fragment() {
    /*override fun onResume() {
         super.onResume()
         viewModel.yemekleriYukle()
-        viewModel.kategorileriYukle()
+        //viewModel.kategorileriYukle()
     }*/
 
 }

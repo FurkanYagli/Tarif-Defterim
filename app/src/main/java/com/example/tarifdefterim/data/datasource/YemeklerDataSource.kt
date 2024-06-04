@@ -16,7 +16,6 @@ class YemeklerDataSource(var collectionYemekler: CollectionReference)  {
         collectionYemekler.addSnapshotListener { value, error ->
             if(value != null){
                 val liste = ArrayList<Yemekler>()
-
                 for (d in value.documents){
                     val yemek = d.toObject(Yemekler::class.java)
                     if (yemek != null){
@@ -29,8 +28,10 @@ class YemeklerDataSource(var collectionYemekler: CollectionReference)  {
         }
         return yemeklerlistesi
     }
-    fun kategoriyeGoreYemekleriYukle(kategoriId:String):MutableLiveData<List<Yemekler>>{
-        collectionYemekler.addSnapshotListener { value, error ->
+
+
+    fun kategoriyeGoreYemekleriYukle(kategoriId:String)/*:MutableLiveData<List<Yemekler>>*/{
+        /*collectionYemekler.addSnapshotListener { value, error ->
             if(value != null){
                 val liste = ArrayList<Yemekler>()
 
@@ -38,8 +39,7 @@ class YemeklerDataSource(var collectionYemekler: CollectionReference)  {
                     val yemek = d.toObject(Yemekler::class.java)
                     if (yemek != null){
                         if (yemek.yemek_kategori!!.lowercase().contains(kategoriId.lowercase())){
-                            yemek.yemek_id = d.id
-                            liste.add(yemek)
+                                                    liste.add(yemek)
                         }
                     }
                     yemeklerlistesi.value = liste
@@ -47,7 +47,7 @@ class YemeklerDataSource(var collectionYemekler: CollectionReference)  {
             }
 
         }
-        return yemeklerlistesi
+        return yemeklerlistesi*/
     }
 
 
@@ -67,7 +67,6 @@ class YemeklerDataSource(var collectionYemekler: CollectionReference)  {
                 yemeklerlistesi.value = liste
             }
         }
-
     }
         return yemeklerlistesi
     }

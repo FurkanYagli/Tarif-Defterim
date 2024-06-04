@@ -1,6 +1,7 @@
 package com.example.tarifdefterim.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,7 @@ import com.example.tarifdefterim.databinding.FragmentLoginBinding
 import com.example.tarifdefterim.ui.viewmodel.GirisViewModel
 import com.example.tarifdefterim.util.gecisYap
 import dagger.hilt.android.AndroidEntryPoint
-import java.lang.Exception
+
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -54,24 +55,25 @@ class LoginFragment : Fragment() {
     }
     fun buttonGirisYap(mail:String,sifre:String){
         try {
-            val a = viewModel.girisYap(mail, sifre)
-            if (viewModel.kullanicilarlistesi.value != null){
+            viewModel.girisYap(mail, sifre)
+            if (viewModel.kullanicilarlistesi != null){
                 if (viewModel.kullanicilarlistesi.value!!.size == 1){
                     Navigation.gecisYap(binding.buttonGiris, R.id.loginMaine)
                     //Toast.makeText(requireContext(), "True", Toast.LENGTH_LONG).show()
 
                 }
-                else{Toast.makeText(requireContext(), "Hatalı Bilgi Lütfennnn Bilgilerinizi Kontrol Ediniz", Toast.LENGTH_SHORT).show()}
+                else{Toast.makeText(requireContext(), "Hatalı Bilgi Lütfen Bilgilerinizi Kontrol Ediniz", Toast.LENGTH_SHORT).show()}
             }
-            else{Toast.makeText(requireContext(), "Hatalı Bilgi Lütfen Bilgilerinizi Kontrol Ediniz", Toast.LENGTH_LONG).show()}
+            else{Toast.makeText(requireContext(), "Sistemde Arıza Var Kısa Süre Sonra Tekrar Deneyiniz", Toast.LENGTH_LONG).show()}
 
             //viewModel.kullanicilarlistesi.observe(viewLifecycleOwner){}
 
 
         }catch (e: Exception){
-            Toast.makeText(requireContext(), "Hatalı Bilgi Lütfen Bilgilerinizi Kontrol Edinizzzz", Toast.LENGTH_LONG).show()
-        }
+            Toast.makeText(requireContext(), "Beklenmeyen Hata" , Toast.LENGTH_SHORT).show()
+            Log.e("Hata", "Hata mesajı: Bir hata oluştu! ${e}")
 
         }
+    }
 
 }

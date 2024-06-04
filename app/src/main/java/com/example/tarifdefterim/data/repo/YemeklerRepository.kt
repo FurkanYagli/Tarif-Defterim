@@ -17,5 +17,5 @@ class YemeklerRepository(var yds:YemeklerDataSource, var kds:KategorilerDataSour
 
     fun ara(aramaKelimesi: String):MutableLiveData<List<Yemekler>> = yds.ara(aramaKelimesi)
 
-    fun kategoriGetir(kategoriId: String):MutableLiveData<List<Yemekler>> = yds.kategoriyeGoreYemekleriYukle(kategoriId)
+    fun kategoriGetir(kategoriId: String)/*:MutableLiveData<List<Yemekler>>*/ = yds.kategoriyeGoreYemekleriYukle(kategoriId)
 }

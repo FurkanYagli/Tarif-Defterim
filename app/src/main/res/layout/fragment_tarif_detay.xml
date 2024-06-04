@@ -63,6 +63,22 @@
                                 android:padding="5dp">
 
                                 <TextView
+                                    android:id="@+id/textTarifText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="56dp"
+                                    android:padding="2dp"
+                                    android:text="Tarif:"
+                                    android:textAlignment="center"
+                                    android:textSize="32sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.012"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textMalzemeler" />
+
+                                <TextView
                                     android:id="@+id/textAd"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -77,36 +93,53 @@
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
-                                    android:id="@+id/textTarif"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="42dp"
-                                    android:padding="12dp"
-                                    android:text="@{yemekNesnesi.yemek_tarif}"
-                                    android:textAlignment="center"
-                                    android:textSize="32sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/textAd" />
-
-                                <TextView
                                     android:id="@+id/textMalzemeler"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="42dp"
-                                    android:layout_marginBottom="24dp"
+                                    android:layout_marginTop="3dp"
                                     android:padding="12dp"
                                     android:text="@{yemekNesnesi.yemek_malzemeler}"
                                     android:textAlignment="center"
                                     android:textSize="32sp"
                                     android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.498"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textMalzemelerText" />
+
+                                <TextView
+                                    android:id="@+id/textTarif"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginBottom="32dp"
+                                    android:padding="12dp"
+                                    android:text="@{yemekNesnesi.yemek_tarif}"
+                                    android:textAlignment="center"
+                                    android:textSize="32sp"
+                                    android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintHorizontal_bias="0.498"
                                     app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/textTarif" />
+                                    app:layout_constraintTop_toBottomOf="@+id/textTarifText" />
+
+                                <TextView
+                                    android:id="@+id/textMalzemelerText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="56dp"
+                                    android:padding="2dp"
+                                    android:text="Malzemeler:"
+                                    android:textAlignment="center"
+                                    android:textSize="32sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.042"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textAd" />
+
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
                     </ScrollView>

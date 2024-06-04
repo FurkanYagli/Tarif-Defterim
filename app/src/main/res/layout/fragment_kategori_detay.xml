@@ -9,7 +9,7 @@
             type="com.example.tarifdefterim.data.entity.Yemekler" />
         <variable
             name="kategoriDetayAdapter"
-            type="com.example.tarifdefterim.ui.adapter.KategoriDetayAdapter" />
+            type="com.example.tarifdefterim.ui.adapter.KategoriAdapter" />
         <variable
             name="anasayfaFragment"
             type="com.example.tarifdefterim.ui.fragment.MainFragment" />

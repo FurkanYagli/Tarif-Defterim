@@ -15,6 +15,6 @@ class KategoriDetayViewModel@Inject constructor(var yrepo: YemeklerRepository) :
     }*/
 
     fun KategoriGetir(kategoriId:String){
-        yemeklerlistesi = yrepo.kategoriGetir(kategoriId)
+        yemeklerlistesi = yrepo.yemekleriYukle()
     }
 }

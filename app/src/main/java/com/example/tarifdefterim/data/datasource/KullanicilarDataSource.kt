@@ -22,9 +22,9 @@ class KullanicilarDataSource(var collectionKullanicilar:CollectionReference) {
                 for (d in value.documents){
                     val kullanici = d.toObject(Kullanicilar::class.java)
                     if (kullanici != null){
-                        if (kullanici.kullanici_mail!!.lowercase().contains(mail.lowercase()) /*&& kullanici.kullanici_sifre!!.contains(sifre)*/)
+                        if (kullanici.kullanici_mail!!.lowercase().contains(mail.lowercase()) && kullanici.kullanici_sifre!!.contains(sifre))
                             if (kullanici.kullanici_sifre!!.contains(sifre)){
-                                //kullanici.kullanici_id = d.id
+                                kullanici.kullanici_id = d.id
                                 liste.add(kullanici)
                             }
                     }

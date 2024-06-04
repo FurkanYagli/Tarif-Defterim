@@ -9,7 +9,7 @@ import com.example.tarifdefterim.data.entity.Yemekler
 import com.example.tarifdefterim.databinding.CardTasarimBinding
 import com.example.tarifdefterim.ui.fragment.MainFragmentDirections
 import com.example.tarifdefterim.util.gecisYap
-
+/*
 class KategoriDetayAdapter(var mContext: Context, var yemeklerListesi:List<Yemekler>)
     : RecyclerView.Adapter<KategoriDetayAdapter.CardTasarimTutucu>() {
 
@@ -38,4 +38,4 @@ class KategoriDetayAdapter(var mContext: Context, var yemeklerListesi:List<Yemek
     override fun getItemCount(): Int {
         return yemeklerListesi.size
     }
-}
+}*/
